@@ -69,7 +69,8 @@ export default function CourseCard({course, addSectionID, onToggleSection}: Togg
             </button>
 
             {expanded && (
-                <div className="border-t border-gray-100">
+                <div className="border-t border-gray-100 overflow-x-auto">
+                    <div className="min-w-160">
                     <div className="grid grid-cols-[60px_1fr_1fr_1fr_auto] gap-4 px-5 py-2 text-xs font-medium text-gray-500">
                         <span />
                         <span>INSTRUCTOR</span>
@@ -105,6 +106,7 @@ export default function CourseCard({course, addSectionID, onToggleSection}: Togg
                         )} 
                     </div>
                 ))}
+                    </div>
                 </div>
             )}
         </div>
