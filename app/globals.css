@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f3f4f6;
   --foreground: #171717;
 }
 
@@ -22,5 +22,27 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), var(--font-mono);
+}
+
+.input-wrapper {
+  background-color: white;
+  width: 100%;
+  border-radius: 15px;
+  height: 2.5rem;
+  padding: 0 15px;
+  border: 2px solid #aba8a8;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-left: 8px;
+  outline: none;
+  color: rgb(52, 49, 49);
 }
