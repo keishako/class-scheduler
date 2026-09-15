@@ -18,7 +18,7 @@ interface Filter {
 
 export default function Sidebar({selected, onSelectedChange, onClearSections}: Filter) {
     return (
-        <aside className="w-70 shrink-0 min-h-screen bg-white px-6 py-6 font-mono">
+        <aside className="w-full lg:w-70 lg:shrink-0 lg:min-h-screen bg-white px-6 py-6 font-mono">
             <div className="flex items-center justify-between mb-6">
                 <span className="text-base font-semibold font-mono text-black">FILTERS</span>
                 <button onClick={() => {onSelectedChange("all"); onClearSections();}}

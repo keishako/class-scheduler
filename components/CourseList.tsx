@@ -19,13 +19,17 @@ export default function CourseList({query, selected, addSectionID, onToggleSecti
 
     return (
         <div className="flex flex-col gap-4">
-            {filtered.map((course) => (
-                <CourseCard key={course.id} 
-                            course={course} 
-                            addSectionID={addSectionID}
-                            onToggleSection={onToggleSection}
-                />
-            ))}
+            {filtered.length === 0 ? (
+                <p className="text-base text-gray-500 text-center py-15">No courses match your search.</p>
+                ) : (
+                filtered.map((course) => (
+                    <CourseCard key={course.id} 
+                                course={course} 
+                                addSectionID={addSectionID}
+                                onToggleSection={onToggleSection}
+                    />
+                ))
+            )}
         </div>
     );
 }

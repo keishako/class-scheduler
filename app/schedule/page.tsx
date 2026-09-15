@@ -77,7 +77,7 @@ export default function SchedulePage() {
                                             <td key={day} className="border-t border-gray-100 align-top p-1 h-24">
                                                 {classSlot.map(({course, section, slot}) => (
                                                     <div key={section.id + slot.day}
-                                                        className={`rounded-mp border-l-4 p-2 mb-1 ${schedColors[course.subject] ?? "bg-gray-50 border-gray-400 text-gray-900"}`}
+                                                        className={`rounded-md border-l-4 p-2 mb-1 ${schedColors[course.subject] ?? "bg-gray-50 border-gray-400 text-gray-900"}`}
                                                     >
                                                         <p className="text-sm font-semibold">{course.code} | {section.section}</p>
                                                         <p className="text-xs opacity-80">{course.title}</p>

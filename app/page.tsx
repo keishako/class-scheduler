@@ -15,12 +15,12 @@ export default function Home() {
     return (
         <main>
             <Header query={query} onQueryChange={setQuery} />
-            <div className="flex">
+            <div className="flex flex-col lg:flex-row">
                 <Sidebar selected={selected} 
                          onSelectedChange={setSelected} 
                          onClearSections={clearAll}
                 />
-                <div className="flex-1 p-6">
+                <div className="flex-1 p-4 lg:p-6">
                     <CourseList query={query} 
                                 selected={selected}
                                 addSectionID={addSectionID}

@@ -10,7 +10,7 @@ interface Search {
 export default function Header({query, onQueryChange}: Search) {
     return (
         <header className = "w-full bg-[#151c2e]">
-            <div className="max-w-6xl mx-auto flex items-center px-8 py-4">
+            <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-0 sm:px-8 py-4">
                 <a className="text-xl font-bold text-white">
                     SchedHQ
                 </a>

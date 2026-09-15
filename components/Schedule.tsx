@@ -33,7 +33,7 @@ export default function Schedule() {
     const totalUnits = addSections.reduce((sum, {course}) => sum + course.units, 0);
 
     return (
-        <aside className="w-120 shrink-0 bg-[#151c2e] text-white p-4">
+        <aside className="w-full lg:w-120 lg:shrink-0 bg-[#151c2e] text-white p-4">
             <div className="flex items-center justify-between mb-10">
                 <span className="font-semibold text-xl">My Schedule</span>
                 <span className="text-xs text-black bg-white px-3 py-1 rounded-full">{totalUnits} units</span>
