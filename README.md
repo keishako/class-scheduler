@@ -1,4 +1,4 @@
-# SchedHQ - Class Scheduling System
+## SchedHQ - Class Scheduling System
 
 **Live demo:** [https://sched-hq.vercel.app/](https://sched-hq.vercel.app/)
 
