@@ -7,8 +7,6 @@
 ### Prerequisites
 Make sure you have Node.js and npm installed.
 
-First, run the development server:
-
 ### Installation
 
 ```bash
