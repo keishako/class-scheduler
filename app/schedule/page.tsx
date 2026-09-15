@@ -47,50 +47,52 @@ export default function SchedulePage() {
 
         <div className="max-w-7xl mx-auto p-8">
             <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                <table className="w-full border-collapse table-fixed">
-                    <colgroup>
-                        <col className="w-20"/>
-                            {days.map((day) => (<col key={day} />))}
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th className="w-20 border-b border-gray-200"></th>
-                                {days.map((day) => (
-                                    <th key={day} className="text-black text-sm font-medium py-3">{day}</th>
-                                ))}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {timeSlots.map((timeslot) => (
-                                <tr key={timeslot.label}>
-                                    <td className="text-xs text-gray-400 text-right pr-3 pt-3 align-top whitespace-nowrap">{timeslot.label}</td>
-                                    {days.map((day) => {
-                                        const classSlot = addSections.flatMap(({course, section}) => section.schedule
-                                            .filter((slot) => {
-                                            const dayKey = slot.day === "Thursday" ? "H" : slot.day.slice(0, 1);
-                                            return dayKey === day && slot.startTime === timeslot.start;
-                                        })
-                                            .map((slot) => ({course, section, slot}))
-                                        );
-
-                                        return (
-                                            <td key={day} className="border-t border-gray-100 align-top p-1 h-24">
-                                                {classSlot.map(({course, section, slot}) => (
-                                                    <div key={section.id + slot.day}
-                                                        className={`rounded-md border-l-4 p-2 mb-1 ${schedColors[course.subject] ?? "bg-gray-50 border-gray-400 text-gray-900"}`}
-                                                    >
-                                                        <p className="text-sm font-semibold">{course.code} | {section.section}</p>
-                                                        <p className="text-xs opacity-80">{course.title}</p>
-                                                        <p className="text-xs opacity-70 mt-1">{section.instructor} | {section.room}</p>
-                                                    </div>
-                                                ))}
-                                            </td>
-                                        );                                    
-                                    })}
+                <div className="overflow-x-auto">
+                    <table className="w-full min-w-200 border-collapse table-fixed">
+                        <colgroup>
+                            <col className="w-20"/>
+                                {days.map((day) => (<col key={day} />))}
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th className="w-20 border-b border-gray-200"></th>
+                                    {days.map((day) => (
+                                        <th key={day} className="text-black text-sm font-medium py-3">{day}</th>
+                                    ))}
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {timeSlots.map((timeslot) => (
+                                    <tr key={timeslot.label}>
+                                        <td className="text-xs text-gray-400 text-right pr-3 pt-3 align-top whitespace-nowrap">{timeslot.label}</td>
+                                        {days.map((day) => {
+                                            const classSlot = addSections.flatMap(({course, section}) => section.schedule
+                                                .filter((slot) => {
+                                                const dayKey = slot.day === "Thursday" ? "H" : slot.day.slice(0, 1);
+                                                return dayKey === day && slot.startTime === timeslot.start;
+                                            })
+                                                .map((slot) => ({course, section, slot}))
+                                            );
+
+                                            return (
+                                                <td key={day} className="border-t border-gray-100 align-top p-1 h-24">
+                                                    {classSlot.map(({course, section, slot}) => (
+                                                        <div key={section.id + slot.day}
+                                                            className={`rounded-md border-l-4 p-2 mb-1 ${schedColors[course.subject] ?? "bg-gray-50 border-gray-400 text-gray-900"}`}
+                                                        >
+                                                            <p className="text-sm font-semibold">{course.code} | {section.section}</p>
+                                                            <p className="text-xs opacity-80">{course.title}</p>
+                                                            <p className="text-xs opacity-70 mt-1">{section.instructor} | {section.room}</p>
+                                                        </div>
+                                                    ))}
+                                                </td>
+                                            );                                    
+                                        })}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </main>
