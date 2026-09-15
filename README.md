@@ -10,7 +10,7 @@ Make sure you have Node.js and npm installed.
 ### Installation
 
 ```bash
-git clone [https://github.com/keishako/class-scheduler]
+git clone https://github.com/keishako/class-scheduler
 cd class-scheduler
 npm install
 npm run dev
